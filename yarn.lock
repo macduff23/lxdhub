@@ -1312,10 +1312,10 @@
     lodash "4.17.14"
     path-to-regexp "3.0.0"
 
-"@nestjs/testing@6.8.3":
-  version "6.8.3"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-6.8.3.tgz#457bedec42a3de13c0c436b85c987e35e47fe22e"
-  integrity sha512-nhiXfvnfJ0ARzpOJ+7btnHBxTh82oQX6+/G7EnQEBB/A1jFfE+sbB7Pdt6s999prNOQmdw/XdnORV67u9BwNkw==
+"@nestjs/testing@6.10.3":
+  version "6.10.3"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-6.10.3.tgz#61c2bc15aa6f86f531003c5410fad345dd425c36"
+  integrity sha512-qnOb8dET+rNgioka55deJnqEj1TxPyQwuWUf1DAk8gL5BrzOK7ZEsYhAS9mENPRJc8UnmhglcPC6IcozJ/mNyQ==
   dependencies:
     optional "0.1.4"
 
