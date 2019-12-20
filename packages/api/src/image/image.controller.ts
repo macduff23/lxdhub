@@ -12,6 +12,7 @@ import {
   NotFoundException,
   InternalServerErrorException,
   UploadedFile,
+  Logger
 } from '@nestjs/common';
 import { ApiResponse } from '@nestjs/swagger';
 
@@ -27,9 +28,12 @@ import { FileInterceptor } from '@nestjs/platform-express';
  */
 @Controller('/api/v1/image')
 export class ImageController {
+  private logger;
   constructor(
-    private readonly imageService: ImageService
-  ) { }
+    private readonly imageService: ImageService,
+  ) {
+    this.logger = new Logger('image.controller');
+  }
 
   /**
    * Returns images, limited by the given pagination options and
@@ -101,10 +105,15 @@ export class ImageController {
 
   @Post('/')
   @ApiResponse({ status: 200, description: 'The image was imported successfully' })
-  @UseInterceptors(FileInterceptor('file'))
+  @UseInterceptors(FileInterceptor('image'))
   async import(
-    @UploadedFile() file
+    @UploadedFile() image
   ) {
-
+    console.log(image);
+    try {
+     return await this.imageService.importImage(image, 'https://lxdhub-dev-0.node.infra.devops.roche.com:8443', []);
+    } catch(err) {
+      console.log(err);
+    }
   }
 }
